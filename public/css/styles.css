@@ -1,3 +1,7 @@
+body {
+    background-color: #46704B;
+}
+
 /* Header */
 .site-header {
     background-color: #333;
@@ -84,8 +88,8 @@
 }
 
 #header-search {
-    height: 30px;
-    width: 40%;
+    height: 34px;
+    width: 45%;
 }
 
 .profile-button {
@@ -93,8 +97,13 @@
     width: 60px;
     margin-right: 20px;
     border-radius: 50%;
+    border: 1px solid black;
     object-fit: cover;
     cursor: pointer;
     border: none;
     overflow: hidden;
+}
+
+.trending-section-card {
+    background-color: white;
 }

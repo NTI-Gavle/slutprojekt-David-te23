@@ -1,3 +1,7 @@
+        </main> <!-- closes col-lg-9 -->
+    </div> <!-- closes row -->
+</div> <!-- closes container -->
+
 <footer class="site-footer">
     <p>&copy; <?= date('Y') ?> My Home Project. All rights reserved.</p>
     <p>

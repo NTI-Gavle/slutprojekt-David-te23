@@ -27,4 +27,36 @@
     </div>
 </header>
 
-<main class="main-content">
+<div class="container py-4">
+    <div class="row gx-4">
+
+    <?php 
+    $currentPage = basename($_SERVER['PHP_SELF']);
+
+    $showSidebar = ($currentPage !== 'messages.php');
+            
+    if ($showSidebar): ?>
+        <!-- Sidebar: Trending & Recommendations ONLY SHOWS IF NOT ON messages.php-->
+        <aside class="col-lg3 col-md-3">
+            <div class="trending-section mb-4 p-3 bg-light rounded shadow-sm">
+                <h5 class="fw-bold text-center">Trending now</h5>
+                <a href="#"><div class="trending-section-card mb-4 p-3 rounded shadow-sm">
+                    <h5 class="fw-bold text-center">#Quack</h5>
+                </div>
+                </a>
+                
+                <!-- trending tag code goes here -->
+            </div>
+            <div class="suggestions-section p-3 bg-light rounded shadow-sm">
+                <h5 class="fw-bold text-center">You might know</h5>
+                <!-- reccomendations code goes here -->
+            </div>
+        </aside>
+
+        <!-- Main column narrower to fit sidebar -->
+        <main class="col-lg9 col-md-9">
+    <?php else : ?>
+        <!-- main column, full width for messages.php -->
+        <main class="col-12">
+    <?php endif; ?>
+

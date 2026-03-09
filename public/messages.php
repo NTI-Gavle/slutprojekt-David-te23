@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<h2>Contact Us</h2>
+<h2>Messages</h2>
 
 <?php if ($success): ?>
     <p class="success-message">Thank you! Your message has been sent.</p>
