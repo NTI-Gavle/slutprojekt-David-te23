@@ -7,6 +7,8 @@ body {
     background-color: #333;
     color: #fff;
     padding: 15px 0;
+    position: relative;
+    z-index: 1050;
 }
 
 .header-container {
@@ -31,7 +33,7 @@ body {
 .site-nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    /*gap: 40px;*/
     margin: 0;
     padding: 0;
 }
@@ -76,8 +78,7 @@ body {
 }
 
 .site-nav, .search-profile-container {
-    flex: 1;
-    display: flex;
+    
     align-items: center;
 }
 
@@ -106,4 +107,42 @@ body {
 
 .trending-section-card {
     background-color: white;
+}
+
+.flex-b-0 {
+    flex-basis: 0;
+}
+
+.qSearchBar {
+    width: 200px;
+}
+
+.navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: #333;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+.navbar-nav {
+    width: 100%;
+    display: block !important;
+}
+
+.navbar-nav .nav-link {
+    padding: 15px 25px !important;
+    border-bottom: 1px solid #444;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.navbar-nav .nav-link:last-child {
+    border-bottom: none;
 }
