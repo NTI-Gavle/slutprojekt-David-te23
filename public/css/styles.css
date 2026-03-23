@@ -1,9 +1,14 @@
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: #46704B;
 }
 
 /* Header */
 .site-header {
+    position: sticky;
+    top: 0;
     background-color: #333;
     color: #fff;
     padding: 15px 0;
@@ -46,7 +51,8 @@ body {
 }
 
 .site-nav a:hover {
-    text-decoration: underline 1px solid #4FA158; /* Optional hover effect */
+    text-decoration: underline 1px solid #4FA158;
+    transform: translateY(-2px);
 }
 
 /* Main content */
@@ -59,18 +65,20 @@ body {
 .site-footer {
     text-align: center;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #33312f;
+    color: white;
     margin-top: 40px;
 }
 
 .site-footer a {
-    color: #333;
+    color: white;
     text-decoration: none;
     margin: 0 5px;
 }
 
 .site-footer a:hover {
     text-decoration: underline;
+    transform: translateY(-2px);
 }
 
 .header-img {
@@ -135,7 +143,7 @@ body {
     margin: 0;
     border: none;
     overflow: hidden;
-    transition: width 0.3s ease, padding 0.3s ease;
+    transition: width 0.5s ease;
     height: 35px;
     color: white;
 }
@@ -201,6 +209,10 @@ body {
 
     .search-active #closeSearchBtn {
         display: block !important;
+    }
+
+    .footer-links {
+        flex-direction: row !important;
     }
 }
 
