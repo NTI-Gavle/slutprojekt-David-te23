@@ -152,6 +152,60 @@ body {
     height: 32px;
 }
 
+.feed-container {
+    background-color: #D9D9D9;
+    min-height: 80vh;
+}
+
+.feed-tab {
+    transition: all 0.2s ease;
+}
+
+.feed-tab.active {
+    background-color: #ffffff;
+    border-bottom: 5px solid #46704B !important;
+}
+
+.feed-tab:hover:not(.active) {
+    background-color: #eeeeee;
+}
+
+.btn-quack {
+    background-color: #46704B;
+    color:white;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.1s;
+}
+
+.btn-quack:hover {
+    background-color: #3a5c3e;
+    color: white;
+    transform: scale(1.05);
+}
+
+.profile-pic-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.create-quack-card textarea {
+    resize: none;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.action-icon {
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.action-icon:hover {
+    color: #46704B;
+}
 
 @media (max-width: 991.98px) {
     .site-nav {
