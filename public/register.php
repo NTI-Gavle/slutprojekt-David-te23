@@ -5,7 +5,7 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div class="login-page-wrapper">
     <div class="container d-flex justify-content-center align-items-center min-vh-70">
-        <div class="login-card shadow-sm border-0 p-4">
+        <div class="login-card shadow-sm border-0 p-5">
             
             <div class="text-center mb-4">
                 <h2 class="fw-bold">Join Quacker!</h2>

@@ -1,3 +1,25 @@
+<?php 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once __DIR__ . '../../database/db.php';
+
+$currentPage = basename($_SERVER['PHP_SELF']);
+$publicPages = ['login.php', 'register.php'];
+
+if (!isset($_SESSION['user_id']) && !in_array($currentPage, $publicPages)) {
+    header("Location: login.php");
+    exit;
+}
+
+$currentUser = null;
+if (isset($_SESSION['user_id'])) {
+    $stmt = $dbconn->prepare("SELECT * FROM users WHERE id =?");
+    $stmt->execute([$_SESSION['user_id']]);
+    $currentUser = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +32,6 @@
     <link rel="stylesheet" href="css/styles.css">
     
     <?php 
-    $currentPage = basename($_SERVER['PHP_SELF']);
     if ($currentPage == 'login.php' || $currentPage == 'register.php'): ?>
     <link rel="stylesheet" href="css/loginregister.css">
     <?php endif; ?>
