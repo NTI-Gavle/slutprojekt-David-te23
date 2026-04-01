@@ -26,6 +26,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Quacker' ?></title>
+    <link rel="icon" type="image/svg+xml" href="../public/images/QuackerLogo.svg">
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -86,24 +87,44 @@ if (isset($_SESSION['user_id'])) {
             
     if ($showSidebar): ?>
         <!-- Sidebar: Trending & Recommendations ONLY SHOWS IF NOT ON messages.php-->
-        <aside class="col-lg3 col-md-3">
-            <div class="trending-section mb-4 p-3 bg-light rounded shadow-sm">
-                <h5 class="fw-bold text-center">Trending now</h5>
-                <a href="#"><div class="trending-section-card mb-4 p-3 rounded shadow-sm">
-                    <h5 class="fw-bold text-center">#Quack</h5>
-                </div>
-                </a>
-                
-                <!-- trending tag code goes here -->
+        <aside class="col-lg-3 col-md-4 d-none d-md-block">
+    <!-- Trending Section -->
+    <div class="trending-section mb-4 p-3 custom-sidebar-card shadow-sm">
+        <h5 class="fw-bold mb-3">Trending now</h5>
+        <div class="d-grid gap-2">
+            <a href="#" class="btn btn-trending shadow-sm bg-white">#trend</a>
+            <a href="#" class="btn btn-trending shadow-sm bg-white">#quackify</a>
+            <a href="#" class="btn btn-trending shadow-sm bg-white">#BTC</a>
+        </div>
+    </div>
+
+    <!-- Suggestions Section -->
+    <div class="suggestions-section p-3 custom-sidebar-card shadow-sm">
+        <h5 class="fw-bold mb-3">You might know</h5>
+        
+        <!-- User Suggestion 1 -->
+        <div class="suggestion-item d-flex align-items-center mb-3 p-2 rounded shadow-sm bg-white">
+            <div class="profile-pic-placeholder me-2"></div>
+            <div class="user-info">
+                <div class="fw-bold lh-1 text-truncate-custom">George</div>
+                <small class="text-muted text-truncate-custom">@george123</small>
             </div>
-            <div class="suggestions-section p-3 bg-light rounded shadow-sm">
-                <h5 class="fw-bold text-center">You might know</h5>
-                <!-- reccomendations code goes here -->
+        </div>
+
+        <!-- User Suggestion 2 -->
+        <div class="suggestion-item d-flex align-items-center p-2 rounded shadow-sm bg-white">
+            <div class="profile-pic-placeholder me-2"></div>
+            <div class="user-info">
+                <div class="fw-bold lh-1 text-truncate-custom">DuckGod</div>
+                <small class="text-muted text-truncate-custom">@duckmaswdwhdhdwhuhasudwh</small>
             </div>
-        </aside>
+        </div>
+    </div>
+</aside>
+
 
         <!-- Main column narrower to fit sidebar -->
-        <main class="col-lg9 col-md-9">
+        <main class="col-lg-9 col-md-9">
     <?php else : ?>
         <!-- main column, full width for messages.php -->
         <main class="col-12">
