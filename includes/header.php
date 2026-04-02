@@ -5,6 +5,13 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once __DIR__ . '../../database/db.php';
 
+function getPfpPath($fileName) {
+    if (!$fileName || $fileName === 'default_pfp.jpg') {
+        return "../public/images/default_pfp.jpg";
+    }
+    return "../uploads/pfp/" . $fileName;
+}
+
 $currentPage = basename($_SERVER['PHP_SELF']);
 $publicPages = ['login.php', 'register.php'];
 
@@ -71,8 +78,9 @@ if (isset($_SESSION['user_id'])) {
             <!-- döljs på mobil (d-none), visas på desktop (d-lg-block) -->
             <input type="search" name="" id="header-search" placeholder="Search Quacker" class="form-control d-none d-lg-block me-3 qSearchBar">
 
-            <a href="index.php" class="profile-button p-0 m-0">
-                <img src="../public/images/cat2.jpg" alt="Quacker Logo" class="header-img">
+            <a href="profile.php?id=<?= $currentUser['id'] ?>" class="profile-button p-0 m-0">
+                <img src="<?= getPfpPath($currentUser['profile_image'] ?? 'default_pfp.jpg') ?>"
+                 alt="Profile" class="header-img">
             </a>
         </div>
     </div>
@@ -83,7 +91,7 @@ if (isset($_SESSION['user_id'])) {
 
     <?php 
     $currentPage = basename($_SERVER['PHP_SELF']);
-    $showSidebar = ($currentPage !== 'messages.php' && $currentPage !== 'login.php' & $currentPage !== 'register.php');
+    $showSidebar = ($currentPage !== 'messages.php' && $currentPage !== 'login.php' && $currentPage !== 'register.php');
             
     if ($showSidebar): ?>
         <!-- Sidebar: Trending & Recommendations ONLY SHOWS IF NOT ON messages.php-->
